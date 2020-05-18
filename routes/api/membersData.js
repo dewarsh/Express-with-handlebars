@@ -33,7 +33,8 @@ router.post('/', (req, res) => {
 
     if(!error) {
         members.push(newMember)
-        res.json(members)
+        // res.json(members)
+        res.redirect('/')
     } else {
         res.status(400).send(error.details[0].message)
     }
