@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
+const members = require('./members')
 
 // app.get('/', (req, res) => {
 //     console.log('Demo on handling http requests for URL /api/members')
@@ -12,7 +13,8 @@ app.set('view engine', 'handlebars');
 
 // Homepage Route
 app.get('/', (req, res) => res.render('index', {
-    title: 'Member App'
+    title: 'Member App',
+    members
 }))
 
 // Body parser because body of request Object was unable to read JSON
